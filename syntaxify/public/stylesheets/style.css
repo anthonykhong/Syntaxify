@@ -1,8 +1,29 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+  text-decoration: none;
+  padding-left: 30px;
+}
+
+a:hover {
+  color: grey;
+}
+
+h2 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+nav {
+  background: linear-gradient(#660708, #a4161a, #e5383b);
+  padding: 20px;
+  display: flex;
+  justify-content: right;
 }

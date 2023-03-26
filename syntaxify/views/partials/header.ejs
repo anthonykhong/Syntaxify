@@ -8,35 +8,48 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel&family=Luckiest+Guy&family=Old+Standard+TT&family=Orbitron&family=Righteous&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    /> -->
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    
+
     <title></title>
   </head>
 
   <nav>
-    <img src="https://i.imgur.com/P8xlQOp.png">
+    <a href="/" class="logo">
+      <img src="https://i.imgur.com/P8xlQOp.png" />
+    </a>
     <ul>
-      <li><a href="/" class="route-option">Home</a></li>
       <li><a href="/" class="route-option">Languages</a></li>
       <li><a href="/" class="route-option">Frameworks</a></li>
       <li><a href="/" class="route-option">Databases</a></li>
       <% if (user) { %>
-        <li><a href="/logout">LOG OUT</a></li>
+      <li><a href="/logout">LOG OUT</a></li>
       <% } else { %>
-        <li><a href="/auth/google" class="login"
-        >LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
-      /></a></li>
+      <li>
+        <a href="/auth/google" class="login"
+          >LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"
+        /></a>
+      </li>
       <% } %>
-  </ul>
+    </ul>
   </nav>
 
   <body>
     <main>
       <h1></h1>
-      <div class="sidebar" style="display:none" id="mySidebar">
-        <button class="close-sidebar"
-        onclick="closeSidebar()">Close &times;</button>
+      <div class="sidebar" style="display: none" id="mySidebar">
+        <button class="close-sidebar" onclick="closeSidebar()">
+          Close &times;
+        </button>
         <ul>
           <li>
             <a href="#" class="languages-route">Languages</a>
@@ -49,12 +62,15 @@
           </li>
         </ul>
       </div>
-      
+
       <div id="main">
-      
-      <div class="w3-teal">
-        <button id="openNav" class="hamburgerButton" onclick="openSidebar()">&#9776;</button>
-        <div class="container"></div>
+        <div class="w3-teal">
+          <button id="openNav" class="hamburgerButton" onclick="openSidebar()">
+            &#9776;
+          </button>
+          <div class="container"></div>
+        </div>
       </div>
-      
-      
+    </main>
+  </body>
+</html>

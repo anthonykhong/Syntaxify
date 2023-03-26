@@ -8,6 +8,11 @@ async function index(req, res) {
   });
 }
 
+async function index(req, res) {
+    const documentaion = await Documentation.find({});
+    res.render('documenations/index', { title: 'Syntaxify', documentaion });
+}
+
 async function show(req, res) {
   const documentation = await Documentation.findById(req.params.id);
   res.render("documentations/show", { title: "Documentation", documentation });
@@ -31,8 +36,8 @@ async function create(req, res) {
 }
 
 module.exports = {
-  index,
-  show,
-  new: newDocumentation,
-  create,
+    index,
+    show,
+    new: newDocumentation,
+    create
 };

@@ -1,36 +1,36 @@
 body {
-	background: linear-gradient(-45deg, #ee7752, #f73e3e, #a11111, #d52323);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	height: 100vh;
+  background: linear-gradient(-45deg, #ee7752, #f73e3e, #a11111, #d52323);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* body { */
-  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
-  /* margin: 0; */
-  /* background: url(../images/background.gif);
+/* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+/* margin: 0; */
+/* background: url(../images/background.gif);
   background-size: cover; */
 /* } */
 
-a {
+.route-option {
   color: white;
   text-decoration: none;
   padding-left: 30px;
 }
 
-a:hover {
+.route-option:hover {
   color: rgb(141, 134, 134);
 }
 
@@ -46,7 +46,7 @@ h1 {
 
 nav {
   background-color: white;
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 1.5rem;
   position: fixed;
   top: 0;
@@ -54,6 +54,7 @@ nav {
   right: 0;
   height: 80px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 15px 0 black;
 }
@@ -66,7 +67,6 @@ nav li {
   margin: 20px;
 }
 
-
 .route-option {
   color: black;
 }
@@ -75,11 +75,12 @@ nav li {
   background: #000000;
   color: white;
   border-bottom: solid #d52323;
-  border-radius: .1rem;
+  border-radius: 4vmin;
   padding: 10px;
 }
 
 img {
+  padding-top: 10px;
   height: 80px;
 }
 
@@ -89,6 +90,7 @@ img {
   justify-content: flex-end;
   height: 34px;
   color: black;
+  text-decoration: none;
 }
 
 .login img {
@@ -99,6 +101,6 @@ img {
   background: #000000;
   color: white;
   border-bottom: solid #d52323;
-  border-radius: .1rem;
+  border-radius: 4vmin;
   padding: 10px;
 }

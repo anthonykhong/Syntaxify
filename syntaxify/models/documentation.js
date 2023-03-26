@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Comment = mongoose.model("Comment", commentSchema);
 const Documentation = mongoose.model("Documentation", documentationSchema);
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 const commentSchema = new Schema(
   {

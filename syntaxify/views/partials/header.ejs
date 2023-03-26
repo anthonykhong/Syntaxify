@@ -18,12 +18,13 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     /> -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/stylesheets/style.css" />
 
     <title></title>
   </head>
 
-  <nav>
+  <!-- <nav>
     <a href="/" class="logo">
       <img src="https://i.imgur.com/P8xlQOp.png" />
     </a>
@@ -41,36 +42,91 @@
       </li>
       <% } %>
     </ul>
-  </nav>
+  </nav> -->
 
   <body>
-    <main>
-      <h1></h1>
-      <div class="sidebar" style="display: none" id="mySidebar">
-        <button class="close-sidebar" onclick="closeSidebar()">
-          Close &times;
-        </button>
-        <ul>
-          <li>
-            <a href="#" class="languages-route">Languages</a>
-          </li>
-          <li>
-            <a href="#" class="frameworks-route">Frameworks</a>
-          </li>
-          <li>
-            <a href="#" class="databases-route">Databases</a>
-          </li>
-        </ul>
+    <nav class="sidebar close">
+      <header>
+          <div class="image-text">
+              <span class="image">
+                  <a href="/"><img src="https://i.imgur.com/P8xlQOp.png" alt=""></a>
+              </span>
+              <div class="text logo-text">
+                <span class="name">Syntaxify</span>
+            </div>
+          </div>
+
+          <i class='bx bx-chevron-right toggle'></i>
+      </header>
+
+      <div class="menu-bar">
+          <div class="menu">
+
+              <li class="search-box">
+                  <i class='bx bx-search icon'></i>
+                  <input type="text" placeholder="Search...">
+              </li>
+
+              <ul class="menu-links">
+                  <li class="nav-link">
+                      <a href="#">
+                          <i class='bx bx-home-alt icon' ></i>
+                          <span class="text nav-text">Home</span>
+                      </a>
+                  </li>
+
+                  <li class="nav-link">
+                      <a href="#">
+                          <i class='bx bx-code icon' ></i>
+                          <span class="text nav-text">Languages</span>
+                      </a>
+                  </li>
+
+                  <li class="nav-link">
+                      <a href="#">
+                          <i class='bx bx-terminal icon'></i>
+                          <span class="text nav-text">Frameworks</span>
+                      </a>
+                  </li>
+
+                  <li class="nav-link">
+                      <a href="#">
+                          <i class='bx bx-data icon' ></i>
+                          <span class="text nav-text">Databases</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="bottom-content">
+              <li class="">
+                <% if (user) { %>
+                  <a href="/logout" class="text nav-text">LOG OUT</a>
+                  <% } else { %>
+                  
+                    <a href="/auth/google" class="login">
+                      LOG IN&nbsp;
+                    </a>
+                  <% } %>
+              </li>
+
+              <li class="mode">
+                  <div class="sun-moon">
+                      <i class='bx bx-moon icon moon'></i>
+                      <i class='bx bx-sun icon sun'></i>
+                  </div>
+                  <span class="mode-text text">Dark mode</span>
+
+                  <div class="toggle-switch">
+                      <span class="switch"></span>
+                  </div>
+              </li>
+              
+          </div>
       </div>
 
-      <div id="main">
-        <div class="w3-teal">
-          <button id="openNav" class="hamburgerButton" onclick="openSidebar()">
-            &#9776;
-          </button>
-          <div class="container"></div>
-        </div>
-      </div>
-    </main>
-  </body>
-</html>
+  </nav>
+
+
+
+      

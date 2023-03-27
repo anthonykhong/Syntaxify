@@ -14,6 +14,7 @@ router.get("/:id", documentationsCtrl.show);
 router.post("/", ensureLoggedIn, documentationsCtrl.create);
 
 // Routes for languages
+<<<<<<< HEAD
 router.get("/languages", documentationsCtrl.indexLanguages);
 router.get("/languages/new", ensureLoggedIn, documentationsCtrl.newLanguage);
 router.get("/languages/:id", documentationsCtrl.showLanguage);
@@ -27,5 +28,20 @@ router.get("/frameworks/:id", documentationsCtrl.showFramework);
 router.get("/frameworks", documentationsCtrl.indexDatabases);
 router.get("/frameworks/new", ensureLoggedIn, documentationsCtrl.newDatabase);
 router.get("/frameworks/:id", documentationsCtrl.showDatabase);
+=======
+router.get("/languages", documentationsCtrl.languages.index);
+router.get("/languages/new", ensureLoggedIn, documentationsCtrl.languages.new);
+router.get("/languages/:id", documentationsCtrl.languages.show);
+
+// Routes for frameworks
+router.get("/frameworks", documentationsCtrl.frameworks.index);
+router.get("/frameworks/new", ensureLoggedIn, documentationsCtrl.frameworks.new);
+router.get("/frameworks/:id", documentationsCtrl.frameworks.show);
+
+// Routes for databases
+router.get("/databases", documentationsCtrl.databases.index);
+router.get("/databases/new", ensureLoggedIn, documentationsCtrl.databases.new);
+router.get("/databases/:id", documentationsCtrl.databases.show);
+>>>>>>> a8d20a3 (Slight Modifications to Views)
 
 module.exports = router;

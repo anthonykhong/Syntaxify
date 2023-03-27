@@ -35,7 +35,7 @@
         ><%= c.userName %>
       </td>
       <td><%= c.createdAt.toLocaleDateString() %></td>
-      <td><%= c.content %></td>
+      <td><%= c.text %></td>
       <td>
         <% if (user?._id.equals(c.user)) { %>
         <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
@@ -51,3 +51,8 @@
 <% } else { %>
 <h5>No Comments Yet</h5>
 <% } %>
+<<<<<<< HEAD
+=======
+
+<%- include('./partials/footer') %>
+>>>>>>> a8d20a3 (Slight Modifications to Views)

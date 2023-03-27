@@ -13,4 +13,19 @@ router.get("/:id", documentationsCtrl.show);
 // POST /documentations
 router.post("/", ensureLoggedIn, documentationsCtrl.create);
 
+// Routes for languages
+router.get("/languages", documentationsCtrl.indexLanguages);
+router.get("/languages/new", ensureLoggedIn, documentationsCtrl.newLanguage);
+router.get("/languages/:id", documentationsCtrl.showLanguage);
+
+// Routes for frameworks
+router.get("/frameworks", documentationsCtrl.indexFrameworks);
+router.get("/frameworks/new", ensureLoggedIn, documentationsCtrl.newFramework);
+router.get("/frameworks/:id", documentationsCtrl.showFramework);
+
+// Routes for databasFramework.Frarouter.get("/databases", documentationsCtrl.indexDatabases);
+router.get("/frameworks", documentationsCtrl.indexDatabases);
+router.get("/frameworks/new", ensureLoggedIn, documentationsCtrl.newDatabase);
+router.get("/frameworks/:id", documentationsCtrl.showDatabase);
+
 module.exports = router;

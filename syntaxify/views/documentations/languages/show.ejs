@@ -1,5 +1,3 @@
-<%- include('./partials/header') %>
-
 <h1>SYNTAXIFY</h1>
 
 <section id="show-page">
@@ -17,14 +15,6 @@
 >
   <label>Add a Comment:</label>
   <textarea name="text"></textarea>
-  <label>Rating:</label>
-  <select name="rating">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5" selected>5</option>
-  </select>
   <input type="submit" value="Add Review" />
 </form>
 <% } %> <% if (documentation.comments.length) { %>
@@ -60,5 +50,4 @@
 
 <% } else { %>
 <h5>No Comments Yet</h5>
-
-<%- include('./partials/footer') %>
+<% } %>

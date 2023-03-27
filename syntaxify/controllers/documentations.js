@@ -10,7 +10,7 @@ async function index(req, res) {
 
 async function index(req, res) {
     const documentaion = await Documentation.find({});
-    res.render('documenations/index', { title: 'Syntaxify', documentaion });
+    res.render('documentations/index', { title: 'Syntaxify', documentaion });
 }
 
 async function show(req, res) {

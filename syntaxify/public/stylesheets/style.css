@@ -47,6 +47,72 @@ h1 {
   font-family: "Bebas Neue", sans-serif;
 }
 
+.all-documentations {
+    display: flex;
+    justify-content: space-evenly;
+    color: var(--text-color);
+}
+
+.Languages {
+    max-height: 50%;
+    width: fit-content;
+    border-style: solid;
+    border-width: thick;
+    border-radius: 1rem;
+    border-color: var(--primary-color);
+    padding: 1rem; 
+}
+
+.Frameworks {
+    max-height: 50%;
+    width: fit-content;
+    border-style: solid;
+    border-width: thick;
+    border-radius: 1rem;
+    border-color: var(--primary-color);
+    padding: 1rem; 
+}
+
+.Databases {
+    max-height: 50%;
+    width: fit-content;
+    border-style: solid;
+    border-width: thick;
+    border-radius: 1rem;
+    border-color: var(--primary-color);
+    padding: 1rem; 
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+    font-family: "Poppins", sans-serif;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-style: solid;
+    border-width: thick;
+    border-radius: 4vmin;
+    border-color: var(--primary-color);
+}
+
+.about:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-family: "Poppins", sans-serif;
+    padding: 1rem;
+    width: 36rem;
+}
+
 /* nav {
   background-color: white;
   font-family: "Syne", sans-serif;
@@ -128,7 +194,7 @@ nav li {
     --primary-color: #695CFE;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
-    --text-color: #707070;
+    --text-color: #2b2b2b;
 
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;

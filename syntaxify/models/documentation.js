@@ -1,26 +1,23 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const Comment = mongoose.model("Comment", commentSchema);
-const Documentation = mongoose.model("Documentation", documentationSchema);
-const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 const commentSchema = new Schema(
   {
     text: {
       type: String,
-      required: true
+      required: true,
     },
     name: {
       type: Schema.Types.ObjectId,
-      ref: 'User'
+      ref: "User",
     },
     date: {
       type: Date,
-      default: Date.now
-    }
+      default: Date.now,
+    },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
@@ -28,21 +25,18 @@ const documentationSchema = new Schema(
   {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     content: {
       type: String,
-      required: true
+      required: true,
     },
-    comments: [commentSchema]
+    comments: [commentSchema],
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
-
-module.exports = { 
-  Comment, 
-  Documentation 
-};
+module.exports = mongoose.model("Documentation", documentationSchema);
+module.exports = mongoose.model("Comment", commentSchema);

@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<table id="list">
+  <thead>
+    <tr>
+      <h2>Databases</h2>
+    </tr>
+  </thead>
+  <tbody>
+    <% documentations.forEach(function(d) { %>
+    <tr>
+      <td><%= d.title %></td>
+      <td><a href="/documentations/<%= d._id %>">MORE DETAILS</a></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>

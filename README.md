@@ -1,6 +1,6 @@
 <div align="center">
   
-![Syntaxify-Logo-icon](https://user-images.githubusercontent.com/116925227/227818788-9c57709a-9f96-48c1-920c-a12d04da7ae8.png | width="30%" height="15%")
+<img src="https://user-images.githubusercontent.com/116925227/227818788-9c57709a-9f96-48c1-920c-a12d04da7ae8.png" width="30%" height="15%" />
 
 ### WELCOME TO YOUR CODING COMMUNITY
 # SYNTAXIFY

@@ -9,8 +9,8 @@ async function index(req, res) {
 }
 
 async function index(req, res) {
-    const documentaion = await Documentation.find({});
-    res.render('documentations/index', { title: 'Syntaxify', documentaion });
+  const documentation = await Documentation.find({});
+  res.render("documentations/index", { title: "Syntaxify", documentation });
 }
 
 async function show(req, res) {
@@ -35,9 +35,78 @@ async function create(req, res) {
   }
 }
 
+async function indexLanguages(req, res) {
+  res.render("documentations/languages/index", {
+    title: "All Languages",
+  });
+}
+
+function newLanguage(req, res) {
+  res.render("documentations/languages/new", {
+    title: "Add Language",
+    errorMsg: "",
+  });
+}
+
+async function showLanguage(req, res) {
+  res.render("documentations/languages/show"),
+    {
+      title: "Language",
+    };
+}
+
+async function indexFrameworks(req, res) {
+  res.render("documentations/frameworks/index", {
+    title: "All Frameworks",
+  });
+}
+
+function newFramework(req, res) {
+  res.render("documentations/frameworks/new", {
+    title: "Add Framework",
+    errorMsg: "",
+  });
+}
+
+async function showFramework(req, res) {
+  res.render("documentations/frameworks/show"),
+    {
+      title: "Framework",
+    };
+}
+
+async function indexDatabases(req, res) {
+  res.render("documentations/databases/index", {
+    title: "All Databases",
+  });
+}
+
+function newDatabase(req, res) {
+  res.render("documentations/databases/new", {
+    title: "Add Database",
+    errorMsg: "",
+  });
+}
+
+async function showDatabase(req, res) {
+  res.render("documentations/databases/show"),
+    {
+      title: "Database",
+    };
+}
+
 module.exports = {
-    index,
-    show,
-    new: newDocumentation,
-    create
+  index,
+  show,
+  new: newDocumentation,
+  create,
+  newLanguage,
+  showLanguage,
+  indexLanguages,
+  newFramework,
+  showFramework,
+  indexFrameworks,
+  newDatabase,
+  showDatabase,
+  indexDatabases,
 };

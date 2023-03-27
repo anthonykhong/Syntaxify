@@ -1,0 +1,63 @@
+<%- include('./partials/header') %>
+
+<h1>SYNTAXIFY</h1>
+
+<section id="show-page">
+    <div><%= documentation.title %></div>
+    <div><%= documentation.content %></div>
+</section>
+
+<br><br><h2>Comment Section:</h2>
+<% if (user) { %>
+<form id="add-review-form" method="POST"
+  action="/documentations/<%= documentation._id %>/comments">
+  <label>Add a Comment:</label>
+  <textarea name="text"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
+<% } %>
+
+<% if (documentation.comments.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Date</th>
+          <th>Comment</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% documentation.comments.forEach(function(c) { %>
+        <tr>
+          <td class="comment-user">
+            <img alt="avatar" src="<%= c.userAvatar %> referrerpolicy="no-referrer"
+            ><%= c.userName %>
+          </td>
+          <td><%= c.createdAt.toLocaleDateString() %></td>
+          <td><%= c.text %></td>
+          <td>
+            <% if (user?._id.equals(c.user)) { %>
+            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+              <button type="submit">X</button>
+            </form>
+            <% } %>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    
+    <% } else { %>
+    <h5>No Comments Yet</h5>
+    <% } %>
+
+<%- include('./partials/footer') %>

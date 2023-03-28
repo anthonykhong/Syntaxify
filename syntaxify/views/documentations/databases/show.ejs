@@ -3,24 +3,23 @@
 <h1>SYNTAXIFY</h1>
 
 <section id="show-page">
-  <div><%= documentation.title %></div>
-  <div><%= documentation.content %></div>
+  <div><%= database.title %></div>
+  <div><%= database.content %></div>
 </section>
 
 <br /><br />
-<% if (user) { %>
 <h2>Comment Section:</h2>
+<% if (user) { %>
 <form
   id="add-comment-form"
   method="POST"
-  action="/documentations/<%= documentations._id %>/comments"
+  action="/documentations/databases/<%= database._id %>/comments"
 >
   <label>Add a comment:</label>
   <textarea name="text"></textarea>
   <input type="submit" value="Add Comment" />
 </form>
-
-<% if (user) { %>
+<% } %> <% if (database.comments.length) { %>
 <table>
   <thead>
     <tr>
@@ -31,7 +30,7 @@
     </tr>
   </thead>
   <tbody>
-    <% documentation.comments.forEach(function(c) { %>
+    <% database.comments.forEach(function(c) { %>
     <tr>
       <td class="comment-user">
         <img alt="avatar" src="<%= c.userAvatar %> referrerpolicy="no-referrer"
@@ -41,7 +40,10 @@
       <td><%= c.text %></td>
       <td>
         <% if (user?._id.equals(c.user)) { %>
-        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+        <form
+          action="/documentations/databases/<%= database._id %>/comments/<%= c._id %>?_method=DELETE"
+          method="POST"
+        >
           <button type="submit">X</button>
         </form>
         <% } %>
@@ -52,5 +54,5 @@
 </table>
 
 <% } else { %>
-<h5>No Comments Yet</../h5>
-<% } %> <%- include('../partials/footer') %>
+<h5>No Comments Yet</h5>
+<% } %> <%- include('../../partials/footer') %>

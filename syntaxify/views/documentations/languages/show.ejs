@@ -33,14 +33,20 @@
       <% language.comments.forEach(function(c) { %>
       <tr>
         <td class="comment-user">
-          <img alt="avatar" src="<%= c.userAvatar %>"
-          referrerpolicy="no-referrer" ><%= c.userName %>
+          <img
+            alt="avatar"
+            src="<%= c.userAvatar %>"
+            referrerpolicy="no-referrer"
+          /><%= c.userName %>
         </td>
         <td><%= c.createdAt.toLocaleDateString() %></td>
         <td><%= c.text %></td>
         <td>
           <% if (user?._id.equals(c.user)) { %>
-          <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+          <form
+            action="/documentations/languages/<%= language._id %>/comments/<%= c._id %>?_method=DELETE"
+            method="POST"
+          >
             <button type="submit">X</button>
           </form>
           <% } %>

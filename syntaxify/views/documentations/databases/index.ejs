@@ -7,13 +7,14 @@
     </tr>
   </thead>
   <tbody>
-    <% documentations.forEach(function(d) { %>
+    <% databases.forEach(function(d) { %>
     <tr>
       <td><%= d.title %></td>
-      <td><a href="/documentations/<%= d._id %>">MORE DETAILS</a></td>
+      <td><a href="/documentations/databases/<%= d._id %>">MORE DETAILS</a></td>
     </tr>
     <% }); %>
   </tbody>
 </table>
+
 
 <%- include('../partials/footer') %>

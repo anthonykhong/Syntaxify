@@ -1,23 +1,24 @@
+<%- include('../partials/header') %>
+
 <h1>SYNTAXIFY</h1>
 
-<section id="show-page">
-  <div><%= documentation.title %></div>
-  <div><%= documentation.content %></div>
-</section>
+<h1><%= language.title %></h1>
+
+<p><%= language.content %></p>
 
 <br /><br />
 <h2>Comment Section:</h2>
-<% if (user) { %>
+<% if (language.comments.length > 0) { %>
 <form
-  id="add-review-form"
+  id="add-comment-form"
   method="POST"
-  action="/documentations/<%= documentation._id %>/comments"
+  action="/documentations/<%= language._id %>/comments"
 >
   <label>Add a Comment:</label>
   <textarea name="text"></textarea>
-  <input type="submit" value="Add Review" />
+  <input type="submit" value="Add Comment" />
 </form>
-<% } %> <% if (documentation.comments.length) { %>
+<% } %> <% if (language.comments.length) { %>
 <table>
   <thead>
     <tr>
@@ -28,7 +29,7 @@
     </tr>
   </thead>
   <tbody>
-    <% documentation.comments.forEach(function(c) { %>
+    <% language.comments.forEach(function(c) { %>
     <tr>
       <td class="comment-user">
         <img alt="avatar" src="<%= c.userAvatar %> referrerpolicy="no-referrer"
@@ -51,8 +52,5 @@
 <% } else { %>
 <h5>No Comments Yet</h5>
 <% } %>
-<<<<<<< HEAD
-=======
 
-<%- include('./partials/footer') %>
->>>>>>> a8d20a3 (Slight Modifications to Views)
+<%- include('../partials/footer') %>

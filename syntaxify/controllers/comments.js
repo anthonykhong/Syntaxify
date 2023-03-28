@@ -1,4 +1,7 @@
-const Documentation = require("../models/documentation");
+const Language = require("../models/language");
+const Framework = require("../models/framework");
+const Database = require("../models/database");
+
 
 async function create(req, res) {
   try {

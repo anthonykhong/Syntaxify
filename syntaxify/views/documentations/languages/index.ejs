@@ -2,7 +2,8 @@
 
 <h1>SYNTAXIFY</h1>
 
-<!-- <table id="list">
+
+<table id="list">
   <thead>
     <tr>
       <th>Languages</th>
@@ -10,13 +11,14 @@
     </tr>
   </thead>
   <tbody>
-    <% documentations.forEach(function(d) { %>
+    <% languages.forEach(function(l) { %>
     <tr>
-      <td><%= d.title %></td>
-      <td><a href="/documentations/<%= d._id %>">MORE DETAILS</a></td>
+      <td><%= l.title %></td>
+      <td><a href="/documentations/languages/<%= l._id %>">MORE DETAILS</a></td>
     </tr>
     <% }); %>
   </tbody>
-</table> -->
+</table>
+
 
 <%- include('../partials/footer') %>

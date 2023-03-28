@@ -1,13 +1,15 @@
 require('dotenv').config();
 require('./config/database');
 
-const Documentation = require('./models/documentation');
+const Language = require("./models/language");
+const Framework = require("./models/framework");
+const Database = require("./models/database");
 
 const data = require('./data');
 
 (async function() {
 results = await Promise.all([
-  Documentation.create(data.documentations),
+  Language.create(data.languages),
   ]);
   process.exit();
 })();

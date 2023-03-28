@@ -6,9 +6,23 @@ const ensureLoggedIn = require("../config/ensureLoggedIn");
 router.post(
   "/documentations/languages/:id/comments",
   ensureLoggedIn,
-  commentsCtrl.create
+  commentsCtrl.createL
 );
 
-router.delete("/comments/:id", ensureLoggedIn, commentsCtrl.delete);
+router.post(
+  "/documentations/frameworks/:id/comments",
+  ensureLoggedIn,
+  commentsCtrl.createF
+);
+
+router.post(
+  "/documentations/databases/:id/comments",
+  ensureLoggedIn,
+  commentsCtrl.createD
+);
+
+router.delete("/documentations/languages/:id/comments/:id", ensureLoggedIn, commentsCtrl.deleteCommentL);
+router.delete("/documentations/frameworks/:id/comments/:id", ensureLoggedIn, commentsCtrl.deleteCommentF);
+router.delete("/documentations/databases/:id/comments/:id", ensureLoggedIn, commentsCtrl.deleteCommentD);
 
 module.exports = router;

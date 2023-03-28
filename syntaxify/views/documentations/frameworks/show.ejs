@@ -13,7 +13,7 @@
 <form
   id="add-comment-form"
   method="POST"
-  action="/documentations/<%= framework._id %>/comments"
+  action="/documentations/frameworks/<%= framework._id %>/comments"
 >
   <label>Add a Comment:</label>
   <textarea name="text"></textarea>
@@ -40,7 +40,10 @@
       <td><%= c.text %></td>
       <td>
         <% if (user?._id.equals(c.user)) { %>
-        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+        <form
+          action="/documentations/frameworks/<%= framework._id %>/comments/<%= c._id %>?_method=DELETE"
+          method="POST"
+        >
           <button type="submit">X</button>
         </form>
         <% } %>

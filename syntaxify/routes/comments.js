@@ -4,7 +4,7 @@ const commentsCtrl = require("../controllers/comments");
 const ensureLoggedIn = require("../config/ensureLoggedIn");
 
 router.post(
-  "/documentations/:id/comments",
+  "/documentations/languages/:id/comments",
   ensureLoggedIn,
   commentsCtrl.create
 );

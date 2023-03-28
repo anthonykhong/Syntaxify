@@ -1,14 +1,14 @@
-<%- include('../partials/header') %>
+<%- include('../../partials/header') %>
 
 <h1>SYNTAXIFY</h1>
 
 <section id="show-page">
-  <div><%= database.title %></div>
-  <div><%= database.content %></div>
+  <div><%= documentation.title %></div>
+  <div><%= documentation.content %></div>
 </section>
 
 <br /><br />
-<% if (database.comments.length > 0) { %>
+<% if (user) { %>
 <h2>Comment Section:</h2>
 <form
   id="add-comment-form"
@@ -19,9 +19,8 @@
   <textarea name="text"></textarea>
   <input type="submit" value="Add Comment" />
 </form>
-<% } %>
 
-<% if (database.comments.length) { %>
+<% if (user) { %>
 <table>
   <thead>
     <tr>
@@ -32,7 +31,7 @@
     </tr>
   </thead>
   <tbody>
-    <% database.comments.forEach(function(c) { %>
+    <% documentation.comments.forEach(function(c) { %>
     <tr>
       <td class="comment-user">
         <img alt="avatar" src="<%= c.userAvatar %> referrerpolicy="no-referrer"
@@ -53,8 +52,5 @@
 </table>
 
 <% } else { %>
-<h5>No Comments Yet</h5>
-<% } %>
-
-
-<%- include('../partials/footer') %>
+<h5>No Comments Yet</../h5>
+<% } %> <%- include('../partials/footer') %>

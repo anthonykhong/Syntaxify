@@ -3,12 +3,12 @@
 <h1>SYNTAXIFY</h1>
 
 <section id="show-page">
-  <div><%= documentation.title %></div>
-  <div><%= documentation.content %></div>
+  <div><%= database.title %></div>
+  <div><%= database.content %></div>
 </section>
 
 <br /><br />
-<% if (user) { %>
+<% if (database.comments.length > 0) { %>
 <h2>Comment Section:</h2>
 <form
   id="add-comment-form"
@@ -19,8 +19,9 @@
   <textarea name="text"></textarea>
   <input type="submit" value="Add Comment" />
 </form>
+<% } %>
 
-<% if (documentation.comments.length) { %>
+<% if (database.comments.length) { %>
 <table>
   <thead>
     <tr>
@@ -31,7 +32,7 @@
     </tr>
   </thead>
   <tbody>
-    <% documentation.comments.forEach(function(c) { %>
+    <% database.comments.forEach(function(c) { %>
     <tr>
       <td class="comment-user">
         <img alt="avatar" src="<%= c.userAvatar %> referrerpolicy="no-referrer"
@@ -53,4 +54,7 @@
 
 <% } else { %>
 <h5>No Comments Yet</h5>
-<% } %> <%- include('../partials/footer') %>
+<% } %>
+
+
+<%- include('../partials/footer') %>

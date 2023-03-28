@@ -22,12 +22,12 @@ function deleteComment(req, res, next) {
   Language.findOne({
     "comments._id": req.params.id,
     "comments.user": req.user._id,
-  }).then(function (language) {
+  }).then(function(language) {
     if (!language) return res.redirect("/languages");
     language.comments.remove(req.params.id);
     language
       .save()
-      .then(function () {
+      .then(function() {
         res.redirect(`/documentations/languages/${language._id}`);
       })
       .catch(function (err) {

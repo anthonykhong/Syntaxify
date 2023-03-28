@@ -7,10 +7,13 @@ const commentSchema = new Schema(
       type: String,
       // required: true,
     },
-    name: {
+    user: {
       type: Schema.Types.ObjectId,
       ref: "User",
+      // required: true,
     },
+    userName: String,
+    userAvatar: String,
     date: {
       type: Date,
       default: Date.now,

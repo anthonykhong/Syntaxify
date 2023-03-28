@@ -5,7 +5,7 @@ const commentSchema = new Schema(
   {
     text: {
       type: String,
-      required: true,
+      // required: true,
     },
     name: {
       type: Schema.Types.ObjectId,
@@ -21,7 +21,7 @@ const commentSchema = new Schema(
   }
 );
 
-const documentationSchema = new Schema(
+const languageSchema = new Schema(
   {
     title: {
       type: String,
@@ -38,5 +38,4 @@ const documentationSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model("Documentation", documentationSchema);
-module.exports = mongoose.model("Comment", commentSchema);
+module.exports = mongoose.model("Language", languageSchema);

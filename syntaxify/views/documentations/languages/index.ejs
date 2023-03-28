@@ -1,0 +1,22 @@
+<%- include('../../partials/header') %>
+
+<h1>SYNTAXIFY</h1>
+
+<table id="list">
+  <thead>
+    <tr>
+      <th>Languages</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% languages.forEach(function(l) { %>
+    <tr>
+      <td><%= l.title %></td>
+      <td><a href="/documentations/languages/<%= l._id %>">MORE DETAILS</a></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<%- include('../../partials/footer') %>

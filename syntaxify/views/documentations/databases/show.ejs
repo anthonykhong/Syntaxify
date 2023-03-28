@@ -1,0 +1,56 @@
+<%- include('../../partials/header') %>
+
+<h1>SYNTAXIFY</h1>
+
+<section id="show-page">
+  <div><%= documentation.title %></div>
+  <div><%= documentation.content %></div>
+</section>
+
+<br /><br />
+<% if (user) { %>
+<h2>Comment Section:</h2>
+<form
+  id="add-comment-form"
+  method="POST"
+  action="/documentations/<%= documentations._id %>/comments"
+>
+  <label>Add a comment:</label>
+  <textarea name="text"></textarea>
+  <input type="submit" value="Add Comment" />
+</form>
+
+<% if (user) { %>
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+      <th>Comment</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% documentation.comments.forEach(function(c) { %>
+    <tr>
+      <td class="comment-user">
+        <img alt="avatar" src="<%= c.userAvatar %> referrerpolicy="no-referrer"
+        ><%= c.userName %>
+      </td>
+      <td><%= c.createdAt.toLocaleDateString() %></td>
+      <td><%= c.text %></td>
+      <td>
+        <% if (user?._id.equals(c.user)) { %>
+        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+          <button type="submit">X</button>
+        </form>
+        <% } %>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<% } else { %>
+<h5>No Comments Yet</../h5>
+<% } %> <%- include('../partials/footer') %>

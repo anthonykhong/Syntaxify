@@ -86,7 +86,7 @@ function newFramework(req, res) {
 
 async function showFramework(req, res) {
   const framework = await Framework.findById(req.params.id);
-  res.render("documentations/languages/show", {
+  res.render("documentations/frameworks/show", {
     title: "Framework",
     framework,
   });

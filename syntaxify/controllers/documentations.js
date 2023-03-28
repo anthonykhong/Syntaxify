@@ -42,14 +42,10 @@ async function indexLanguages(req, res) {
 }
 
 function newLanguage(req, res) {
-  if (req.method === "POST") {
-    create(req, res);
-  } else {
     res.render("documentations/languages/new", {
       title: "Add Language",
       errorMsg: "",
     });
-  }
 }
 
 async function showLanguage(req, res) {
@@ -59,6 +55,17 @@ async function showLanguage(req, res) {
     language,
   });
 }
+
+async function createLanguage(req, res) {
+  try {
+    const language = await Language.create(req.body);
+    res.redirect(`/documentations/languages/${language._id}`);
+  } catch (err) {
+    console.log(err);
+    res.render("/documentations/languages/new", { errorMsg: err.message });
+  }
+}
+
 
 async function indexFrameworks(req, res) {
   try {
@@ -74,15 +81,12 @@ async function indexFrameworks(req, res) {
 }
 
 function newFramework(req, res) {
-  if (req.method === "POST") {
-    create(req, res);
-  } else {
     res.render("documentations/frameworks/new", {
       title: "Add Framework",
       errorMsg: "",
     });
   }
-}
+
 
 async function showFramework(req, res) {
   const framework = await Framework.findById(req.params.id);
@@ -90,6 +94,16 @@ async function showFramework(req, res) {
     title: "Framework",
     framework,
   });
+}
+
+async function createFramework(req, res) {
+  try {
+    const framework = await Framework.create(req.body);
+    res.redirect(`/documentations/frameworks/${framework._id}`);
+  } catch (err) {
+    console.log(err);
+    res.render("/documentations/frameworks/new", { errorMsg: err.message });
+  }
 }
 
 async function indexDatabases(req, res) {
@@ -106,15 +120,12 @@ async function indexDatabases(req, res) {
 }
 
 function newDatabase(req, res) {
-  if (req.method === "POST") {
-    create(req, res);
-  } else {
     res.render("documentations/databases/new", {
       title: "Add Database",
       errorMsg: "",
     });
   }
-}
+
 
 async function showDatabase(req, res) {
   const database = await Database.findById(req.params.id);
@@ -123,6 +134,18 @@ async function showDatabase(req, res) {
     database,
   });
 }
+
+
+async function createDatabase(req, res) {
+  try {
+    const database = await Database.create(req.body);
+    res.redirect(`/documentations/databases/${database._id}`);
+  } catch (err) {
+    console.log(err);
+    res.render("/documentations/databases/new", { errorMsg: err.message });
+  }
+}
+
 
 module.exports = {
   index,
@@ -135,4 +158,7 @@ module.exports = {
   newDatabase,
   showDatabase,
   indexDatabases,
+  createDatabase,
+  createFramework,
+  createLanguage
 };

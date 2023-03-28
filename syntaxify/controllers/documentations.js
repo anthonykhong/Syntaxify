@@ -48,16 +48,16 @@ function newLanguage(req, res) {
     res.render("documentations/languages/new", {
       title: "Add Language",
       errorMsg: "",
-   });
+    });
   }
 }
 
 async function showLanguage(req, res) {
-  const language = await Language.findById(req.params.id)
+  const language = await Language.findById(req.params.id);
   res.render("documentations/languages/show", {
     title: "Language",
     language,
-  }); 
+  });
 }
 
 async function indexFrameworks(req, res) {
@@ -65,7 +65,7 @@ async function indexFrameworks(req, res) {
     const frameworks = await Framework.find({});
     res.render("documentations/frameworks/index", {
       title: "All Frameworks",
-      Frameworks: frameworks,
+      frameworks: frameworks,
     });
   } catch (err) {
     console.log(err);
@@ -84,13 +84,12 @@ function newFramework(req, res) {
   }
 }
 
-
 async function showFramework(req, res) {
-  const framework = await Framework.findById(req.params.id)
+  const framework = await Framework.findById(req.params.id);
   res.render("documentations/languages/show", {
     title: "Framework",
     framework,
-  }); 
+  });
 }
 
 async function indexDatabases(req, res) {
@@ -118,11 +117,11 @@ function newDatabase(req, res) {
 }
 
 async function showDatabase(req, res) {
-  const database = await Database.findById(req.params.id)
+  const database = await Database.findById(req.params.id);
   res.render("documentations/databases/show", {
     title: "Databases",
     database,
-  }); 
+  });
 }
 
 module.exports = {

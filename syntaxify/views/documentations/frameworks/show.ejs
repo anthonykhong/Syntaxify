@@ -1,4 +1,4 @@
-<%- include('../partials/header') %>
+<%- include('../../partials/header') %>
 
 <h1>SYNTAXIFY</h1>
 
@@ -9,7 +9,7 @@
 
 <br /><br />
 <h2>Comment Section:</h2>
-<% if (framework.comments.length > 0) { %>
+<% if (user) { %>
 <form
   id="add-comment-form"
   method="POST"
@@ -52,5 +52,4 @@
 
 <% } else { %>
 <h5>No Comments Yet</h5>
-<% } %>
-
+<% } %> <%- include('../../partials/footer') %>

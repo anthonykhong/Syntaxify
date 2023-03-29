@@ -5,6 +5,19 @@
 <section id="show-page">
   <div><%= framework.title %></div>
   <div><%= framework.content %></div>
+  <% if (user) { %>
+  <button id="edit-button">Edit</button>
+  <div id="edit-form" class="hidden">
+    <form
+      method="POST"
+      action="/documentations/frameworks/<%= framework._id %>?_method=PUT"
+    >
+      <input type="hidden" name="frameworkId" value="<%= framework._id %>" />
+      <textarea name="content"><%= framework.content %></textarea>
+      <input type="submit" value="Save" />
+    </form>
+  </div>
+  <% } %>
 </section>
 
 <br /><br />
@@ -55,4 +68,20 @@
 
 <% } else { %>
 <h5>No Comments Yet</h5>
-<% } %> <%- include('../../partials/footer') %>
+<% } %>
+<script>
+  const editButton = document.getElementById("edit-button");
+  const editForm = document.getElementById("edit-form");
+
+  editButton.addEventListener("click", () => {
+    editForm.classList.toggle("hidden");
+  });
+</script>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
+
+<%-include('../../partials/footer') %>

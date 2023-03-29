@@ -2,9 +2,23 @@
 
 <h1>SYNTAXIFY</h1>
 
-<h1><%= language.title %></h1>
-
-<p><%= language.content %></p>
+<section id="show-page">
+  <div><%= language.title %></div>
+  <div><%= language.content %></div>
+  <% if (user) { %>
+  <button id="edit-button">Edit</button>
+  <div id="edit-form" class="hidden">
+    <form
+      method="POST"
+      action="/documentations/languages/<%= language._id %>?_method=PUT"
+    >
+      <input type="hidden" name="languageId" value="<%= language._id %>" />
+      <textarea name="content"><%= language.content %></textarea>
+      <input type="submit" value="Save" />
+    </form>
+  </div>
+  <% } %>
+</section>
 
 <section class="comments">
   <br /><br />
@@ -59,4 +73,21 @@
   <% } else { %>
   <h5>No Comments Yet</h5>
 </section>
-<% } %> <%- include('../../partials/footer') %>
+<% } %>
+
+<script>
+  const editButton = document.getElementById("edit-button");
+  const editForm = document.getElementById("edit-form");
+
+  editButton.addEventListener("click", () => {
+    editForm.classList.toggle("hidden");
+  });
+</script>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
+
+<%- include('../../partials/footer') %>

@@ -6,28 +6,6 @@ async function index(req, res) {
   res.render("documentations/index", { title: "Syntaxify" });
 }
 
-// async function show(req, res) {
-//   const documentation = await Documentation.findById(req.params.id);
-//   res.render("documentations/show", { title: "Documentation", documentation });
-// }
-
-// function newDocumentation(req, res) {
-//   res.render("documentations/new", {
-//     title: "Add Documentation",
-//     errorMsg: "",
-//   });
-// }
-
-// async function create(req, res) {
-//   try {
-//     const documentation = await Documentation.create(req.body);
-//     res.redirect(`/${documentation._id}`);
-//   } catch (err) {
-//     console.log(err);
-//     res.render("documentations/new", { errorMsg: err.message });
-//   }
-// }
-
 async function indexLanguages(req, res) {
   try {
     const languages = await Language.find({});
@@ -36,7 +14,6 @@ async function indexLanguages(req, res) {
       languages: languages,
     });
   } catch (err) {
-    console.log(err);
     res.status(500).send("Server Error");
   }
 }
@@ -44,7 +21,6 @@ async function indexLanguages(req, res) {
 function newLanguage(req, res) {
     res.render("documentations/languages/new", {
       title: "Add Language",
-      errorMsg: "",
     });
 }
 
@@ -61,7 +37,6 @@ async function createLanguage(req, res) {
     const language = await Language.create(req.body);
     res.redirect(`/documentations/languages/${language._id}`);
   } catch (err) {
-    console.log(err);
     res.render("/documentations/languages/new", { errorMsg: err.message });
   }
 }
@@ -75,7 +50,6 @@ async function indexFrameworks(req, res) {
       frameworks: frameworks,
     });
   } catch (err) {
-    console.log(err);
     res.status(500).send("Server Error");
   }
 }
@@ -83,7 +57,6 @@ async function indexFrameworks(req, res) {
 function newFramework(req, res) {
     res.render("documentations/frameworks/new", {
       title: "Add Framework",
-      errorMsg: "",
     });
   }
 
@@ -101,7 +74,6 @@ async function createFramework(req, res) {
     const framework = await Framework.create(req.body);
     res.redirect(`/documentations/frameworks/${framework._id}`);
   } catch (err) {
-    console.log(err);
     res.render("/documentations/frameworks/new", { errorMsg: err.message });
   }
 }
@@ -114,7 +86,6 @@ async function indexDatabases(req, res) {
       databases: databases,
     });
   } catch (err) {
-    console.log(err);
     res.status(500).send("Server Error");
   }
 }
@@ -122,7 +93,6 @@ async function indexDatabases(req, res) {
 function newDatabase(req, res) {
     res.render("documentations/databases/new", {
       title: "Add Database",
-      errorMsg: "",
     });
   }
 
@@ -141,19 +111,26 @@ async function createDatabase(req, res) {
     const database = await Database.create(req.body);
     res.redirect(`/documentations/databases/${database._id}`);
   } catch (err) {
-    console.log(err);
     res.render("/documentations/databases/new", { errorMsg: err.message });
   }
 }
 
 async function editDatabase(req, res) {
-  const database = await Database.findOne({ _id: req.params.id })
-  res.render(`documentations/databases/edit`, {
-    title: "Edit Database",
-    database,
-    errorMsg: "",
-  });
-}
+  const { id } = req.params;
+  const { content } = req.body;
+  try {
+    const database = await Database.findById(id);
+    if (!database) {
+      return res.status(404).send('Database not found');
+    }
+    database.content = content;
+    await database.save();
+    res.redirect(`/documentations/databases/${id}`);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server error');
+  }
+};
 
 
 module.exports = {

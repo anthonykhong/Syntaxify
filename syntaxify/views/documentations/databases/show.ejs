@@ -2,11 +2,18 @@
 
 <h1>SYNTAXIFY</h1>
 <section id="show-page">
-    <div><%= database.title %></div>
-    <div><%= database.content %></div>
-    <% if (user) { %>
-      <a href="/documentations/databases/edit">Edit</a>
-    <% } %>
+  <div><%= database.title %></div>
+  <div><%= database.content %></div>
+  <% if (user) { %>
+    <button id="edit-button">Edit</button>
+    <div id="edit-form" class="hidden">
+      <form method="POST" action="/documentations/databases/<%= database._id %>?_method=PUT">
+        <input type="hidden" name="databaseId" value="<%= database._id %>" />
+        <textarea name="content"><%= database.content %></textarea>
+        <input type="submit" value="Save" />
+      </form>
+    </div>
+  <% } %>
 </section>
 
 <br /><br />
@@ -57,4 +64,21 @@
 
 <% } else { %>
 <h5>No Comments Yet</h5>
-<% } %> <%- include('../../partials/footer') %>
+<% } %> 
+
+<script>
+  const editButton = document.getElementById('edit-button');
+  const editForm = document.getElementById('edit-form');
+
+  editButton.addEventListener('click', () => {
+    editForm.classList.toggle('hidden');
+  });
+</script>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
+
+<%- include('../../partials/footer') %>

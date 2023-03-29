@@ -13,7 +13,6 @@ async function createL(req, res) {
     await language.save();
     res.redirect(`/documentations/languages/${language._id}`);
   } catch (err) {
-    console.error(err);
     res.status(500).send(err.message);
   }
 }
@@ -28,7 +27,6 @@ async function createF(req, res) {
     await framework.save();
     res.redirect(`/documentations/frameworks/${framework._id}`);
   } catch (err) {
-    console.error(err);
     res.status(500).send(err.message);
   }
 }
@@ -43,7 +41,6 @@ async function createD(req, res) {
     await database.save();
     res.redirect(`/documentations/databases/${database._id}`);
   } catch (err) {
-    console.error(err);
     res.status(500).send(err.message);
   }
 }

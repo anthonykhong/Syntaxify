@@ -31,7 +31,9 @@ router.get("/databases", documentationsCtrl.indexDatabases);
 router.get("/databases/new", ensureLoggedIn, documentationsCtrl.newDatabase);
 router.get("/databases/:id", documentationsCtrl.showDatabase);
 router.post("/databases", ensureLoggedIn, documentationsCtrl.createDatabase);
-router.get("/databases/edit", ensureLoggedIn, documentationsCtrl.editDatabase);
-// router.put("/databases/:id", ensureLoggedIn, documentationsCtrl.updateDatabase);
+router.put('/databases/:id', documentationsCtrl.editDatabase);
+  
+
+
 
 module.exports = router;

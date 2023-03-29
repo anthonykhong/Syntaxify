@@ -146,6 +146,15 @@ async function createDatabase(req, res) {
   }
 }
 
+async function editDatabase(req, res) {
+  const database = await Database.findOne({ _id: req.params.id })
+  res.render(`documentations/databases/edit`, {
+    title: "Edit Database",
+    database,
+    errorMsg: "",
+  });
+}
+
 
 module.exports = {
   index,
@@ -160,5 +169,6 @@ module.exports = {
   indexDatabases,
   createDatabase,
   createFramework,
-  createLanguage
+  createLanguage,
+  editDatabase,
 };

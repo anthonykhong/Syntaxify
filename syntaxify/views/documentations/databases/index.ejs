@@ -1,21 +1,51 @@
-<%- include('../../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel&family=Luckiest+Guy&family=Old+Standard+TT&family=Orbitron&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-<h1>SYNTAXIFY</h1>
-<table id="list">
-  <thead>
-    <tr>
-      <h2>Databases</h2>
-      <td><a href="/documentations/databases/new">Add a Database</a></td>
-    </tr>
-  </thead>
-  <tbody>
-    <% databases.forEach(function(d) { %>
-    <tr>
-      <td><%= d.title %></td>
-      <td><a href="/documentations/databases/<%= d._id %>">MORE DETAILS</a></td>
-    </tr>
-    <% }); %>
-  </tbody>
-</table>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 
-<%- include('../../partials/footer') %>
+    <title></title>
+  </head>
+
+  <body>
+    <div class="text-center text-4xl font-bold mt-10">
+      <h1>Syntaxify</h1>
+    </div>
+
+    <table class="table-row w-full">
+      <thead>
+        <tr>
+          <h2 class="table-cell text-lg">Databases</h2>
+          <td>
+            <a href="/documentations/databases/new">Add a Database</a>
+          </td>
+        </tr>
+      </thead>
+      <tbody class="table-row">
+        <% databases.forEach(function(d) { %>
+        <tr>
+          <td class="table-cell"><%= d.title %></td>
+          <td>
+            <a href="/documentations/databases/<%= d._id %>" class="table-cell"
+              >MORE DETAILS</a
+            >
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+    <%- include('../../partials/footer') %>
+  </body>
+</html>

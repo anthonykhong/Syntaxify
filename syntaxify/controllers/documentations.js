@@ -6,28 +6,6 @@ async function index(req, res) {
   res.render("documentations/index", { title: "Syntaxify" });
 }
 
-// async function show(req, res) {
-//   const documentation = await Documentation.findById(req.params.id);
-//   res.render("documentations/show", { title: "Documentation", documentation });
-// }
-
-// function newDocumentation(req, res) {
-//   res.render("documentations/new", {
-//     title: "Add Documentation",
-//     errorMsg: "",
-//   });
-// }
-
-// async function create(req, res) {
-//   try {
-//     const documentation = await Documentation.create(req.body);
-//     res.redirect(`/${documentation._id}`);
-//   } catch (err) {
-//     console.log(err);
-//     res.render("documentations/new", { errorMsg: err.message });
-//   }
-// }
-
 async function indexLanguages(req, res) {
   try {
     const languages = await Language.find({});
@@ -36,20 +14,14 @@ async function indexLanguages(req, res) {
       languages: languages,
     });
   } catch (err) {
-    console.log(err);
     res.status(500).send("Server Error");
   }
 }
 
 function newLanguage(req, res) {
-  if (req.method === "POST") {
-    create(req, res);
-  } else {
-    res.render("documentations/languages/new", {
-      title: "Add Language",
-      errorMsg: "",
-    });
-  }
+  res.render("documentations/languages/new", {
+    title: "Add Language",
+  });
 }
 
 async function showLanguage(req, res) {
@@ -60,6 +32,32 @@ async function showLanguage(req, res) {
   });
 }
 
+async function createLanguage(req, res) {
+  try {
+    const language = await Language.create(req.body);
+    res.redirect(`/documentations/languages/${language._id}`);
+  } catch (err) {
+    res.render("/documentations/languages/new", { errorMsg: err.message });
+  }
+}
+
+async function editLanguage(req, res) {
+  const { id } = req.params;
+  const { content } = req.body;
+  try {
+    const language = await Language.findById(id);
+    if (!language) {
+      return res.status(404).send("Language not found");
+    }
+    language.content = content;
+    await language.save();
+    res.redirect(`/documentations/languages/${id}`);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error");
+  }
+}
+
 async function indexFrameworks(req, res) {
   try {
     const frameworks = await Framework.find({});
@@ -68,20 +66,14 @@ async function indexFrameworks(req, res) {
       frameworks: frameworks,
     });
   } catch (err) {
-    console.log(err);
     res.status(500).send("Server Error");
   }
 }
 
 function newFramework(req, res) {
-  if (req.method === "POST") {
-    create(req, res);
-  } else {
-    res.render("documentations/frameworks/new", {
-      title: "Add Framework",
-      errorMsg: "",
-    });
-  }
+  res.render("documentations/frameworks/new", {
+    title: "Add Framework",
+  });
 }
 
 async function showFramework(req, res) {
@@ -92,6 +84,32 @@ async function showFramework(req, res) {
   });
 }
 
+async function createFramework(req, res) {
+  try {
+    const framework = await Framework.create(req.body);
+    res.redirect(`/documentations/frameworks/${framework._id}`);
+  } catch (err) {
+    res.render("/documentations/frameworks/new", { errorMsg: err.message });
+  }
+}
+
+async function editFramework(req, res) {
+  const { id } = req.params;
+  const { content } = req.body;
+  try {
+    const framework = await Framework.findById(id);
+    if (!framework) {
+      return res.status(404).send("Framework not found");
+    }
+    framework.content = content;
+    await framework.save();
+    res.redirect(`/documentations/frameworks/${id}`);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error");
+  }
+}
+
 async function indexDatabases(req, res) {
   try {
     const databases = await Database.find({});
@@ -100,20 +118,14 @@ async function indexDatabases(req, res) {
       databases: databases,
     });
   } catch (err) {
-    console.log(err);
     res.status(500).send("Server Error");
   }
 }
 
 function newDatabase(req, res) {
-  if (req.method === "POST") {
-    create(req, res);
-  } else {
-    res.render("documentations/databases/new", {
-      title: "Add Database",
-      errorMsg: "",
-    });
-  }
+  res.render("documentations/databases/new", {
+    title: "Add Database",
+  });
 }
 
 async function showDatabase(req, res) {
@@ -122,6 +134,32 @@ async function showDatabase(req, res) {
     title: "Databases",
     database,
   });
+}
+
+async function createDatabase(req, res) {
+  try {
+    const database = await Database.create(req.body);
+    res.redirect(`/documentations/databases/${database._id}`);
+  } catch (err) {
+    res.render("/documentations/databases/new", { errorMsg: err.message });
+  }
+}
+
+async function editDatabase(req, res) {
+  const { id } = req.params;
+  const { content } = req.body;
+  try {
+    const database = await Database.findById(id);
+    if (!database) {
+      return res.status(404).send("Database not found");
+    }
+    database.content = content;
+    await database.save();
+    res.redirect(`/documentations/databases/${id}`);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error");
+  }
 }
 
 module.exports = {
@@ -135,4 +173,10 @@ module.exports = {
   newDatabase,
   showDatabase,
   indexDatabases,
+  createDatabase,
+  createFramework,
+  createLanguage,
+  editDatabase,
+  editLanguage,
+  editFramework,
 };

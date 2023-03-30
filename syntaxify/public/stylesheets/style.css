@@ -671,6 +671,10 @@ video {
   width: 1.5rem;
 }
 
+.w-250 {
+  width: 15.625rem
+}
+
 .w-auto {
   width: auto;
 }

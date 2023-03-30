@@ -672,7 +672,7 @@ video {
 }
 
 .w-250 {
-  width: 15.625rem
+  width: 15.625rem;
 }
 
 .w-auto {
@@ -681,6 +681,14 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-40 {
+  width: 40%;
 }
 
 .max-w-2xl {

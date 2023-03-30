@@ -8,34 +8,38 @@
       >
         Frameworks
       </h2>
-      <p class="mb-3 px-6 py-6 text-center text-gray-500 dark:text-gray-400">
-        Frameworks in programming are like
-        <strong class="font-semibold text-gray-900 dark:text-white"
-          >building blocks</strong
+      <div class="flex justify-center pt-8">
+        <p
+          class="w-70 mb-3 px-6 py-6 text-center text-gray-500 dark:text-gray-400"
         >
-        for creating software applications. They provide developers with a
-        <strong class="font-semibold text-gray-900 dark:text-white"
-          >pre-built set of tools, functions, and libraries</strong
-        >
-        that can be used to
-        <strong class="font-semibold text-gray-900 dark:text-white"
-          >solve common problems, speeding up the development process and
-          improving the quality of the final product.</strong
-        >
-        Think of a framework as a pre-built structure that can be customized and
-        extended to suit the specific needs of a project, without having to
-        start from scratch each time.
-        <strong class="font-semibold text-gray-900 dark:text-white"
-          >With frameworks, developers can focus on the unique aspects of their
-          application, rather than getting bogged down in repetitive, low-level
-          tasks.</strong
-        >
-        Whether you're building a website, mobile app, or desktop software,
-        frameworks are an essential part of modern programming that can help you
-        work smarter, not harder.
-      </p>
+          Frameworks in programming are like
+          <strong class="font-semibold text-gray-900 dark:text-white"
+            >building blocks</strong
+          >
+          for creating software applications. They provide developers with a
+          <strong class="font-semibold text-gray-900 dark:text-white"
+            >pre-built set of tools, functions, and libraries</strong
+          >
+          that can be used to
+          <strong class="font-semibold text-gray-900 dark:text-white"
+            >solve common problems, speeding up the development process and
+            improving the quality of the final product.</strong
+          >
+          Think of a framework as a pre-built structure that can be customized
+          and extended to suit the specific needs of a project, without having
+          to start from scratch each time.
+          <strong class="font-semibold text-gray-900 dark:text-white"
+            >With frameworks, developers can focus on the unique aspects of
+            their application, rather than getting bogged down in repetitive,
+            low-level tasks.</strong
+          >
+          Whether you're building a website, mobile app, or desktop software,
+          frameworks are an essential part of modern programming that can help
+          you work smarter, not harder.
+        </p>
+      </div>
 
-      <div class="flex items-center justify-center">
+      <div class="flex items-center justify-center py-6">
         <a href="/documentations/frameworks/new"
           ><button
             href="/documentations/frameworks/new"
@@ -53,32 +57,32 @@
   </thead>
 </table>
 <section>
-<div
-  class="grid justify-items-center gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 px-8 py-6"
->
-  <% frameworks.forEach(function(f) { %>
-  <a
-    href="/documentations/frameworks/<%= f._id %>"
-    class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+  <div
+    class="grid justify-items-center gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 px-8 py-6"
   >
-    <img
-      class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-      src="/docs/images/blog/image-4.jpg"
-      alt=""
-    />
-    <div class="flex flex-col justify-between p-4 leading-normal">
-      <h5
-        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-      >
-        <%= f.title %>
-      </h5>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        Click here to learn more about this framework!
-      </p>
-    </div>
-  </a>
-  <% }); %>
-</div>
+    <% frameworks.forEach(function(f) { %>
+    <a
+      href="/documentations/frameworks/<%= f._id %>"
+      class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+    >
+      <img
+        class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+        src="/docs/images/blog/image-4.jpg"
+        alt=""
+      />
+      <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5
+          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+        >
+          <%= f.title %>
+        </h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          Click here to learn more about this framework!
+        </p>
+      </div>
+    </a>
+    <% }); %>
+  </div>
 </section>
 
 <%- include('../../partials/footer') %>

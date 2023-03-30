@@ -1,21 +1,66 @@
 <%- include('../../partials/header') %>
-
-<h1>SYNTAXIFY</h1>
 <table id="list">
   <thead>
     <tr>
-      <h2>Databases</h2>
-      <td><a href="/documentations/databases/new">Add a Database</a></td>
+      <h2
+        class="mt-6 text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+      >
+        Databases
+      </h2>
+
+      <p class="mb-3 px-6 text-center text-gray-500 dark:text-gray-400 pt-6">
+        Databases are a fundamental concept in programming that allows us to
+        <strong class="font-semibold text-gray-900 dark:text-white">organize</strong> and <strong class="font-semibold text-gray-900 dark:text-white">store large amounts of data in a structured and efficient manner.</strong> Think of a database as a <strong class="font-semibold text-gray-900 dark:text-white">digital filing cabinet</strong> where
+        information can be easily accessed, searched, and updated. Databases can
+        range from small, single-user systems to large, enterprise-level
+        solutions used by corporations and governments. <strong class="font-semibold text-gray-900 dark:text-white">With the power of
+        databases, programmers can build robust and scalable applications that
+        are capable of handling complex data operations with ease.</strong> So whether
+        you're developing an app, managing an e-commerce platform, or analyzing
+        vast amounts of data, understanding databases is a crucial skill for any
+        programmer.
+      </p>
+      <div class="flex items-center justify-center pt-6">
+        <a href="/documentations/databases/new"><button
+          href="/documentations/databases/new"
+          class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+        >
+          <span
+            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+          >
+            Add a Database
+          </span>
+        </button></a>
+      </div>
     </tr>
   </thead>
-  <tbody>
-    <% databases.forEach(function(d) { %>
-    <tr>
-      <td><%= d.title %></td>
-      <td><a href="/documentations/databases/<%= d._id %>">MORE DETAILS</a></td>
-    </tr>
-    <% }); %>
-  </tbody>
 </table>
-
-<%- include('../../partials/footer') %>
+<!-- <div class="grid gap-4 grid-cols-3 grid-rows-3"> -->
+  <section class="">
+  <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 px-8 py-6">
+<% databases.forEach(function(d) { %>
+  <a
+    href="/documentations/databases/<%= d._id %>"
+    class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+  >
+    <img
+      class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+      src="/docs/images/blog/image-4.jpg"
+      alt=""
+    />
+    <div class="flex flex-col justify-between p-4 leading-normal">
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        <%= d.title %>
+      </h5>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        Click here to learn more about this database!
+      </p>
+    </div>
+  </a>
+  <% }); %> 
+</div>
+</section>
+  <%- include('../../partials/footer') %>
+</div>

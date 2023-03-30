@@ -1,12 +1,35 @@
 <%- include('../../partials/header') %>
 
-<h1>SYNTAXIFY</h1>
-
 <section id="show-page">
-  <div><%= framework.title %></div>
-  <div><%= framework.content %></div>
+  <div>
+    <h2
+      class="mt-6 text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+    >
+      <%= framework.title %>
+    </h2>
+  </div>
+  <div>
+    <p class="py-8 px-6 text-center mb-3 text-gray-500 dark:text-gray-400">
+      <%= framework.content %>
+    </p>
+  </div>
   <% if (user) { %>
-  <button id="edit-button">Edit</button>
+  <button id="edit-button" class="inline-flex items-center justify-center">
+    <svg
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+      ></path>
+    </svg>
+  </button>
   <div id="edit-form" class="hidden">
     <form
       method="POST"
@@ -20,55 +43,71 @@
   <% } %>
 </section>
 
-<br /><br />
-<h2>Comment Section:</h2>
-<% if (user) { %>
-<form
-  id="add-comment-form"
-  method="POST"
-  action="/documentations/frameworks/<%= framework._id %>/comments"
+<h2
+  class="mt-6 text-center text-lg font-bold tracking-tight text-gray-900 sm:text-6xl"
 >
-  <label>Add a Comment:</label>
-  <textarea name="text"></textarea>
-  <input type="submit" value="Add comment" />
-</form>
-<% } %> <% if (framework.comments.length) { %>
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Date</th>
-      <th>Comment</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% framework.comments.forEach(function(c) { %>
-    <tr>
-      <td class="comment-user">
-        <img alt="avatar" src="<%= c.userAvatar %> referrerpolicy="no-referrer"
-        ><%= c.userName %>
-      </td>
-      <td><%= c.createdAt.toLocaleDateString() %></td>
-      <td><%= c.text %></td>
-      <td>
-        <% if (user?._id.equals(c.user)) { %>
-        <form
-          action="/documentations/frameworks/<%= framework._id %>/comments/<%= c._id %>?_method=DELETE"
-          method="POST"
-        >
-          <button type="submit">X</button>
-        </form>
-        <% } %>
-      </td>
-    </tr>
-    <% }); %>
-  </tbody>
-</table>
+  
+<section class="bg-white dark:bg-gray-900 py-8 lg:py-16">
+  <div class="max-w-2xl mx-auto px-4">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Discussion (<%= framework.comments.length %>)</h2>
+    </div>
+    <% if (user) { %>
+      <form class="mb-6" id="add-comment-form" method="POST" action="/documentations/frameworks/<%= framework._id %>/comments">
+        <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+            <label for="comment" class="sr-only">Your comment</label>
+            <textarea id="comment" rows="6"
+                class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
+                placeholder="Write a comment..." required name="text"></textarea>
+        </div>
+          <button
+            class="relative inline-flex items-center justify-center p-0.5 mb-8 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+          >
+            <input
+              type="submit"
+              value="Add Comment"
+              class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+            />
+          </button>
+    </form>
+    <% } %> <% if (framework.comments.length) { %>
+      <% framework.comments.forEach(function(c) { %>
+        <article class="p-6 mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
+          <footer class="flex justify-between items-center mb-2">
+            <div class="flex items-center">
+                <p class="inline-flex items-center mr-3 text-gray-900 tracking-wide dark:text-white">
+                  <img 
+                  alt="avatar" 
+                  src="<%= c.userAvatar %>" 
+                  referrerpolicy="no-referrer"
+                  class="rounded-full h-8 w-8 mr-2"
+                  >
+                  <%= c.userName %></p>
+                <p class="text-gray-600 tracking-wide dark:text-gray-400">
+                  <time><%= c.createdAt.toLocaleDateString() %></time>
+                </p> 
+            </div>
+            <% if (user?._id.equals(c.user)) { %>
+              <form action="/documentations/frameworks/<%= framework._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
+              <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1"
+                class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                type="submit">
+                Delete
+                <span class="sr-only">Delete Comment</span>
+              </button>
+            </form>
+            <% } %>
+          </footer>
+          <p class="flex justify-start font-light tracking-wide"><%= c.text %></p>
+        </article>
+      <% }); %>
+    <% } else { %>
+      <h5 class="text-sm text-gray-500 dark:text-gray-400">No Comments Yet</h5>
+    <% } %>
+    
+  </div>
+</section>
 
-<% } else { %>
-<h5>No Comments Yet</h5>
-<% } %>
 <script>
   const editButton = document.getElementById("edit-button");
   const editForm = document.getElementById("edit-form");
@@ -84,4 +123,4 @@
   }
 </style>
 
-<%-include('../../partials/footer') %>
+<%- include('../../partials/footer') %>

@@ -52,7 +52,9 @@
     </tr>
   </thead>
 </table>
-<div class="mx-auto flex justify-between flex-row flex-wrap px-8 py-6">
+<div
+  class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 px-8 py-6"
+>
   <% frameworks.forEach(function(f) { %>
   <a
     href="/documentations/frameworks/<%= f._id %>"

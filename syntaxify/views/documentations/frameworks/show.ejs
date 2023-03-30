@@ -8,36 +8,51 @@
       <%= framework.title %>
     </h2>
   </div>
+  <% if (user) { %>
+    <div class="flex justify-end items-center px-6 mr-3">
+    <button id="edit-button" class="inline-flex items-center justify-center">
+      <svg
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+        ></path>
+      </svg>Edit <%= framework.title %>
+    </button></div>
   <div>
     <p class="py-8 px-6 text-center mb-3 text-gray-500 dark:text-gray-400">
       <%= framework.content %>
     </p>
   </div>
-  <% if (user) { %>
-  <button id="edit-button" class="inline-flex items-center justify-center">
-    <svg
-      fill="none"
-      stroke="currentColor"
-      stroke-width="1.5"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
-      ></path>
-    </svg>
-  </button>
-  <div id="edit-form" class="hidden">
+  <div id="edit-form" class="hidden flex justify-center items-center">
     <form
       method="POST"
       action="/documentations/frameworks/<%= framework._id %>?_method=PUT"
     >
-      <input type="hidden" name="frameworkId" value="<%= framework._id %>" />
-      <textarea name="content"><%= framework.content %></textarea>
-      <input type="submit" value="Save" />
+    <input type="hidden" name="frameworkId" value="<%= framework._id %>" />
+  <textarea
+      type="hidden"
+      name="content"
+      id="large-input"
+      class="block p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    ><%= framework.content %></textarea>
+    <div class="flex justify-end py-2">
+    <button
+          class="relative inline-flex items-center justify-center p-0.5 mb-8 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+        >
+          <input
+            type="submit"
+            value="Save"
+            class="relative px-5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+          />
+        </button>
+      </div>
     </form>
   </div>
   <% } %>
@@ -45,7 +60,7 @@
 
 <h2
   class="mt-6 text-center text-lg font-bold tracking-tight text-gray-900 sm:text-6xl"
->
+></h2>
   <section class="bg-white dark:bg-gray-900 py-8 lg:py-16">
     <div class="max-w-2xl mx-auto px-4">
       <div class="flex justify-between items-center mb-6">
@@ -141,11 +156,5 @@
     });
   </script>
 
-  <style>
-    .hidden {
-      display: none;
-    }
-  </style>
-
   <%- include('../../partials/footer') %>
-</h2>
+

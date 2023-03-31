@@ -54,9 +54,11 @@
     </tr>
   </thead>
 </table>
-<!-- <div class="grid gap-4 grid-cols-3 grid-rows-3"> -->
+
 <section>
-  <div class="grid justify-items-center gap-4 px-8 py-8">
+  <div
+    class="grid justify-items-center gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 px-8 py-6"
+  >
     <% languages.forEach(function(l) { %>
     <a
       href="/documentations/languages/<%= l._id %>"

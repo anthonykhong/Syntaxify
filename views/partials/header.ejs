@@ -20,6 +20,7 @@
     <script defer src="../../styles/tailwindscript.js"></script>
     <title>Syntaxify</title>
   </head>
+
 <div class="pt-16">
   <header class="dark:bg-gray-800 bg-white fixed w-full top-0 z-50">
     <nav
@@ -138,7 +139,7 @@
               >
             </div>
             <% if (user) { %>
-          <div class="hidden lg:flex lg:flex-1 lg:justify-end">ß
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
             <a href="/logout" class="block rounded-lg py-2.5 text-base font-semibold leading-6 text-gray-900 dark:text-white hover:bg-gray-50">LOG OUT</a>
           </div>
           <% } else { %>
@@ -155,6 +156,7 @@
     </div>
   </header>
 </div>
+
 <div class="flex my-6 justify-end items-center">
 <div class="fixed z-50 flex justify-end px-6">
   <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
@@ -206,13 +208,6 @@ themeToggleBtn.addEventListener('click', function() {
         }
     }
     
-});
-
-const closeButton = document.getElementById('close-button');
-const header = document.querySelector('header');
-
-closeButton.addEventListener('click', function() {
-  header.classList.toggle('hidden');
 });
 
 </script>

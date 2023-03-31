@@ -39,22 +39,29 @@ Click the following link to be redirected to the live version of the code! [Synt
 
 ### Landing Page
 
-![main page](/public/images)
+![loginPage](https://user-images.githubusercontent.com/116925227/229010602-aef7bde9-ca2a-40c5-b19b-84799f12dc5d.gif)
+
 ENTER INFORMATION HERE
+
+### Main Page
+
+
 
 ### Languages Page
 
-![Languages Page](/public/images)
+![language](https://user-images.githubusercontent.com/116925227/229010718-5a3fcc97-d315-43fe-b6e2-35d0d773219f.png)
+
 ENTER INFORMATION HERE
 
 ### Frameworks Page
 
-![Frameworks Page](/public/images)
+![framework](https://user-images.githubusercontent.com/116925227/229011034-3d40610a-b086-4ae7-851c-feaed295fc67.png)
+
 ENTER INFORMATION HERE
 
 ### Databases Page
 
-![Databases Page](/public/images)
+
 ENTER INFORMATION HERE
 
 ## :computer: Technologies Used

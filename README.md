@@ -32,7 +32,7 @@
 
 ## :link: Live Link:
 
-Click the following link to be redirected to the live version of the code! [Syntaxify](https://www.google.com/)
+Click the following link to be redirected to the live version of the code! [Syntaxify](https://syntaxify1.herokuapp.com/)
   
 </div>
 

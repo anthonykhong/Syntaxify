@@ -28,7 +28,7 @@
 
 ### Description:
 
-**_Syntaxify_** is a Full-Stack Web Application that utilizes Node.js, Express.js, MongoDB, Mongoose, Bootstrap, and JavaScript to create a fully immersive experience for users to expand their understanding of the three main sectors of programming, LANGUAGES, FRAMEWORKS, and DATABASES. Do you think a certain page is out of date? Maybe it is missing information on one of your favorite capabilities. Well with a Syntaxify account (via Google oAuth) you can submit updates to your liking to help the ever-expanding coding community learn more! [more info here...]
+**_Syntaxify_** is a Full-Stack Web Application that utilizes Node.js, Express.js, MongoDB, Mongoose, Tailwind Css, and JavaScript to create a fully immersive experience for users to expand their understanding of the three main sectors of programming, LANGUAGES, FRAMEWORKS, and DATABASES. Do you think a certain page is out of date? Maybe it is missing information on one of your favorite capabilities. Well with a Syntaxify account (via Google oAuth) you can submit updates to your liking to help the ever-expanding coding community learn more! [more info here...]
 
 ## :link: Live Link:
 

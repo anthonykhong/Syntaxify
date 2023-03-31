@@ -34,6 +34,9 @@ const languageSchema = new Schema(
       type: String,
       required: true,
     },
+    image: {
+      type: String,
+    },
     comments: [commentSchema],
   },
   {

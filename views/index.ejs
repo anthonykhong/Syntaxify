@@ -22,8 +22,10 @@
     <h1
       class="mt-6 text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
     >
-      Syntaxify
-    </h1>
+      Welcome to <br className="block md:hidden" />
+      <span className="relative">
+        <span id="typing-effect" className="h-20 pt-2 overflow-x-hidden whitespace-nowrap text-brand-accent">Syntaxify</span>
+  </h1>
     <div class="dark bg-white">
       <div class="relative isolate px-6 pt-14 lg:px-8">
         <div
@@ -117,5 +119,24 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const typingEffect = document.getElementById("typing-effect");
+      const text = typingEffect.innerText;
+      typingEffect.innerText = "";
+    
+      let index = 0;
+      function showNextLetter() {
+        typingEffect.innerText += text[index];
+        index++;
+        if (index >= text.length) {
+          clearInterval(timer);
+        }
+      }
+    
+      const timer = setInterval(showNextLetter, 100);
+    </script>
+
+
   </body>
 </html>

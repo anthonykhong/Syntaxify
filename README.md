@@ -41,7 +41,7 @@ Click the following link to be redirected to the live version of the code! [Synt
 
 ![loginPage](https://user-images.githubusercontent.com/116925227/229010602-aef7bde9-ca2a-40c5-b19b-84799f12dc5d.gif)
 
-ENTER INFORMATION HERE
+Welcome to 
 
 ### Main Page
 
@@ -61,8 +61,19 @@ ENTER INFORMATION HERE
 
 ### Databases Page
 
+![database](https://user-images.githubusercontent.com/116925227/229011231-7eac022e-a055-4c30-a1ec-207afaaa610a.png)
 
 ENTER INFORMATION HERE
+
+### Add new information!
+
+![Add](https://user-images.githubusercontent.com/116925227/229011388-b573d322-e986-460a-9aa5-81ee1935941c.png)
+
+
+### Discuss a technology with others!
+
+![details](https://user-images.githubusercontent.com/116925227/229011409-afec63bb-bfe4-4b5d-8ca1-fd0181d7d1b3.png)
+
 
 ## :computer: Technologies Used
 

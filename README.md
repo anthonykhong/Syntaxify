@@ -24,11 +24,11 @@
   
 **_Click the following link to be redirected to the live version of the code!_**
 
-## [Syntaxify](https://www.google.com/)
+## [Syntaxify](https://www.syntaxify1.herokuapp.com/)
 
 ### Description:
 
-**_Syntaxify_** is a Full-Stack Web Application that utilizes Node.js, Express.js, MongoDB, Mongoose, Tailwind Css, and JavaScript to create a fully immersive experience for users to expand their understanding of the three main sectors of programming, LANGUAGES, FRAMEWORKS, and DATABASES. Do you think a certain page is out of date? Maybe it is missing information on one of your favorite capabilities. Well with a Syntaxify account (via Google oAuth) you can submit updates to your liking to help the ever-expanding coding community learn more! [more info here...]
+**_Syntaxify_** is a Full-Stack Web Application that utilizes Node.js, Express.js, MongoDB, Mongoose, Tailwind Css, and JavaScript to create a fully immersive experience for users to expand their understanding of the three main sectors of programming, LANGUAGES, FRAMEWORKS, and DATABASES. Do you think a certain page is out of date? Maybe it is missing information on one of your favorite capabilities. Well with a Syntaxify account (via Google oAuth) you can submit updates to your liking to help the ever-expanding coding community learn more! Want to start a conversation about your personal experience with a specific language? Go right ahead within the comment section, just make sure you sign in first!
 
 ## :link: Associated Links:
 

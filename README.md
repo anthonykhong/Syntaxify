@@ -94,10 +94,26 @@ Discuss your thoughts on a particular technology amongst other users.
 ## The Code Behind The Program:
 
 ```
-console.log("Enter some code here")
+async function editLanguage(req, res) {
+  const { id } = req.params;
+  const { content } = req.body;
+  try {
+    const language = await Language.findById(id);
+    if (!language) {
+      return res.status(404).send("Language not found");
+    }
+    language.content = content;
+    await language.save();
+    res.redirect(`/documentations/languages/${id}`);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server error");
+  }
+}
+
 ```
 
-INFORMATION RELATING TO CODE ABOVE GOES HERE
+### The preceeding code displays our edit functionality, one of the fundemental CRUD operators in action. This one specifically allows the user to edit a specific language and add/change any information they deem fit!
 
 ## :chart_with_upwards_trend: Looking Forward
 

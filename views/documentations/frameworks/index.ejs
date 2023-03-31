@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <h2
-        class="mt-6 text-center text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl"
+        class="mt-6 syne text-center text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl"
       >
         Frameworks
       </h2>
@@ -43,7 +43,7 @@
         <a href="/documentations/frameworks/new"
           ><button
             href="/documentations/frameworks/new"
-            class="relative inline-flex items-center justify-center p-0.5 mb-8 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+            class="relative inline-flex items-center justify-center p-0.5 mb-8 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
           >
             <span
               class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
@@ -58,7 +58,7 @@
 </table>
 <section>
   <div
-    class="grid justify-items-center gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 px-8 py-6"
+    class="grid justify-items-center gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 px-8 py-8"
   >
     <% frameworks.forEach(function(f) { %>
     <a
@@ -66,13 +66,13 @@
       class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
     >
       <img
-        class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-        src="/docs/images/blog/image-4.jpg"
+        class="object-cover rounded-t-lg h-48 sm:h-64 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+        src="<%= f.image %>"
         alt=""
       />
       <div class="flex flex-col justify-between p-4 leading-normal">
         <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+          class="mb-2 syne text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
         >
           <%= f.title %>
         </h5>

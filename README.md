@@ -21,13 +21,10 @@
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
-<div align="center">
   
 **_Click the following link to be redirected to the live version of the code!_**
 
 ## [Syntaxify](https://www.google.com/)
-
-</div>
 
 ### Description:
 
@@ -36,6 +33,8 @@
 ## :link: Live Link:
 
 Click the following link to be redirected to the live version of the code! [Syntaxify](https://www.google.com/)
+  
+</div>
 
 ## :camera_flash: Visuals and Helpful Insight (Getting Started):
 
@@ -43,39 +42,43 @@ Click the following link to be redirected to the live version of the code! [Synt
 
 ![loginPage](https://user-images.githubusercontent.com/116925227/229010602-aef7bde9-ca2a-40c5-b19b-84799f12dc5d.gif)
 
-Welcome to 
+Welcome to Syntiaxify! Log in in order to access the technologies displayed within ou website.
 
 ### Main Page
 
 ![indexpage](https://user-images.githubusercontent.com/116925227/229011921-d6f2fe16-fc03-4d44-bb13-d0c6a2994f17.gif)
 
+An index page containing languages, frameworks, and databases typically serves as a reference guide for developers and programmers.
+
 ### Languages Page
 
 ![language](https://user-images.githubusercontent.com/116925227/229010718-5a3fcc97-d315-43fe-b6e2-35d0d773219f.png)
 
-ENTER INFORMATION HERE
+Find information on the different languages used in programming.
 
 ### Frameworks Page
 
 ![framework](https://user-images.githubusercontent.com/116925227/229011034-3d40610a-b086-4ae7-851c-feaed295fc67.png)
 
-ENTER INFORMATION HERE
+Contains various frameworks used in the field of software engineering.
 
 ### Databases Page
 
 ![database](https://user-images.githubusercontent.com/116925227/229011231-7eac022e-a055-4c30-a1ec-207afaaa610a.png)
 
-ENTER INFORMATION HERE
+List of databases used by programmers to store data relevant to their projects.
 
 ### Add new information!
 
 ![Add](https://user-images.githubusercontent.com/116925227/229011388-b573d322-e986-460a-9aa5-81ee1935941c.png)
 
+Feel free to add new technologies!
 
 ### Discuss a technology with others!
 
 ![details](https://user-images.githubusercontent.com/116925227/229011409-afec63bb-bfe4-4b5d-8ca1-fd0181d7d1b3.png)
 
+Discuss your thoughts on a particular technology amongst other users.
 
 ## :computer: Technologies Used
 
@@ -96,10 +99,10 @@ console.log("Enter some code here")
 
 INFORMATION RELATING TO CODE ABOVE GOES HERE
 
-## :chart_with_upwards_trend: Look Forward
+## :chart_with_upwards_trend: Looking Forward
 
 We here at SYNTAXIFY have a few key changes we hope to implement in the near future to increase the functionality of the website. They are as follows:
 
-- [ ] one here
-- [ ] another one here
-- [ ] the last one here
+- [ ] Allow users to respond to other comments
+- [ ] Ability to take notes on various technologies available on the website
+- [ ] Add adequate responsive design

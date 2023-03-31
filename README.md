@@ -24,7 +24,7 @@
   
 **_Click the following link to be redirected to the live version of the code!_**
 
-## [Syntaxify](https://www.syntaxify1.herokuapp.com/)
+## [Syntaxify](https://syntaxify1.herokuapp.com/)
 
 ### Description:
 

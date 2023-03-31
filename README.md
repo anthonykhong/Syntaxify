@@ -21,6 +21,8 @@
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
+<div align="center">
+  
 **_Click the following link to be redirected to the live version of the code!_**
 
 ## [Syntaxify](https://www.google.com/)
@@ -45,8 +47,7 @@ Welcome to
 
 ### Main Page
 
-![index](https://user-images.githubusercontent.com/116925227/229011660-7285b87c-f0c7-405a-8b2d-0dce7947da87.gif)
-
+![indexpage](https://user-images.githubusercontent.com/116925227/229011921-d6f2fe16-fc03-4d44-bb13-d0c6a2994f17.gif)
 
 ### Languages Page
 
